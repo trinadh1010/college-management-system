@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>admin_portal</title>
+        <style>
+
+        .main{
+            display:grid;
+            grid-template-columns: 250px 1fr;
+            grid-template-rows: 70px 1fr;
+            grid-template-areas: 
+                "header header"
+                "sidebar content";
+            height: 100vh;
+            gap:2px;
+        }
+
+        header{
+            grid-area:header;
+            background-color:rgba(10, 188, 13, 0.614);
+            padding:20px;
+            text-align:center;
+        }
+
+        .sidebar{
+            grid-area:sidebar;
+            background-color: #f0f0f0;
+        }
+
+        .container{
+            display:flex;
+            gap:30px;
+            flex-direction:column;
+            padding: 20px;
+        }
+
+        .btn{
+            background-color: rgba(17, 156, 107, 0.8);
+            padding:15px;
+            box-shadow:0 5px 10px rgba(0,0,0,0.2);
+            cursor:pointer;
+            text-align:center;
+            font-size:16px;
+            transition:0.4s;
+            width:100%;
+            box-sizing: border-box;
+        }
+
+        .content{
+            grid-area:content;
+            padding:20px;
+            overflow:auto;
+        }
+        .btn:hover{
+            transform:translateY(-10px) scale(1.05);
+            filter:brightness(120%);
+            box-shadow:0 20px 40px rgba(0,0,0,0.4);
+        }
+        .content iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="main">
+            <header>welcome to admin protal</header>
+            <div class="sidebar">
+                <div class="container">
+                    <div class="btn" onclick="loadpage('projects.html')">Add projects</div>
+                    <div class="btn" onclick="loadpage('skills.html')">Add skills</div>
+                    <div class="btn" onclick="loadpage('students.html')">Add student marks</div>
+                    <div class="btn" onclick="loadpage('attendence.html')">Add student attendence</div>
+                    <div class="btn" onclick="loadpage('events.html')">Add events</div>
+                </div>
+            </div>
+            <div class="content">
+                <iframe id="contentFrame"></iframe>
+            </div>
+        </div>
+        <script>
+            function loadpage(page){
+                document.getElementById("contentFrame").src = page;
+             }
+        </script>
+    </body>
+</html>

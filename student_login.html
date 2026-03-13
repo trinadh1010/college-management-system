@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>small project</title>
+        <style>
+         form{
+            width:350px;
+            margin:200px auto;
+            padding:20px;
+            border-radius:10px;
+            background-color:rgba(20,70,30,0.3);
+            box-shadow:0 20px 40px rgba(0,0,0,0.4);
+        }
+        body{
+            background-color:rgba(8, 143, 206, 0.4)
+        }
+        h1{
+            text-align:center;
+            padding:20px;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>SRKR Student portal</h1>
+       <form onsubmit="return checking()">
+        <h1>user login form</h1>
+            <table>
+                <tr>
+                    <td><label for="name">name:</label></td>
+                    <td><input type="text" id="name"/></td>
+                </tr>
+                <tr>
+                    <td><label for="reg">reg:</label></td>
+                    <td><input type="number" id="reg"></td>
+                </tr>
+                <tr>
+                    <td><label for="clg">college name:</label></td>
+                    <td><input type="text" id="clg"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="submit">submit</button></td>
+                </tr>
+            </table>
+       </form>
+       <script>
+        function checking(){
+            let reg=parseInt(document.getElementById("reg").value);
+            let clg=document.getElementById("clg").value;
+            let ori_reg=[1234,1235.1236,1237,1238,1239];
+            let clg2="srkr";
+            if((clg.toLowerCase()===clg2)&&(ori_reg.includes(reg))){
+                window.location.href="student_portal.html";
+                return false;
+            }
+            else{
+                alert("sorry unable to connect with the page because wrong credentials");
+                return false;
+            }
+        }
+       </script>
+    </body>
+
+</html>

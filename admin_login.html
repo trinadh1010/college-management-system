@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>college mangement</title>
+        <style>
+            form{
+                background-color:rgba(20, 147, 193, 0.5);
+                margin:100px auto;
+                padding:30px;
+                box-shadow: 0 20px 30px rgba(84, 121, 189, 0.6);
+                width:350px;
+                border-radius:10px;
+            }
+            body{
+                background-color:rgba(88, 32, 218, 0.6);
+            }
+            </style>
+    </head>
+<body>
+     <form onsubmit="return checking()">
+        <h1>Admin login</h1>
+            <table>
+                <tr>
+                    <td><label for="name">name:</label></td>
+                    <td><input type="text" id="name"/></td>
+                </tr>
+                <tr>
+                    <td><label for="password">password:</label></td>
+                    <td><input type="text" id="password"></td>
+                </tr>
+                <tr>
+                    <td><label for="clg">college name:</label></td>
+                    <td><input type="text" id="clg"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="submit">submit</button></td>
+                </tr>
+            </table>
+       </form>
+       <script>
+            let password=document.getElementById("password").value;
+            let clg=document.getElementById("clg").value;
+            let college_password="srkr@123";
+            let clg_name="srkr"
+            if((password==college_password)&&(clg==clg_name)){
+                window.location.href="admin_portal";
+                return false;
+            }
+            else{
+                alert("invalid credentials please try again.");
+                return false;
+            }
+       </script>
+</body>
+</html>

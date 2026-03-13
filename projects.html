@@ -1,0 +1,65 @@
+<html>
+    <head><title>projects</title>
+        <style>
+            h1{
+                text-align:center;
+            }
+           #content {
+                padding: 30px;
+                background: linear-gradient(45deg, #1a758a, #38b482);
+                border-radius: 10px; /* optional, looks nicer */
+                color: white;
+                width:350px; /* text visible on gradient */
+                margin:100px auto;
+            }
+            table{
+                border-collapse: separate;
+                border-spacing: 0 12px;
+            }
+        </style>    
+    </head>
+    <body>
+        <h1>Add projects</h1>
+        <div id="content">
+        <form id="form_id">
+            <table>
+                <tr>
+                    <td><label for="name">project name</label></td>
+                    <td><input type="text" id="name"></td>
+                </tr>
+                <tr>
+                    <td><label for="field">field name</label></td>
+                    <td><input type="text" id="field"></td>
+                </tr>
+                <tr>
+                    <td><label for="description">description:</label></td>
+                    <td><textarea id="description" rows="4" cols="30"></textarea></td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Add project</button></td>
+                </tr>
+            </table>
+        </form>
+        </div>
+        <script>
+             const form=document.getElementById("form_id");
+             form.onsubmit=function(event){
+                event.preventDefault();
+
+                let name=document.getElementById("name").value;
+                let field=document.getElementById("field").value;
+                let desc=document.getElementById("description").value;
+
+                if(name.trim()==="" && field.trim()===""){
+                    alert("please enter project name.");
+                    return;
+                }
+                else{
+                    window.location.href="Do_projects.html?name=" + encodeURIComponent(name)
+                                        +"&field=" +encodeURIComponent(field)
+                                        +"&desc=" +encodeURIComponent(desc);
+                }
+            }
+        </script>
+    </body>
+</html>
